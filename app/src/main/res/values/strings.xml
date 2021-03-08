@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MinhasTarefas</string>
+    <string name="minhas">Minhas</string>
+    <string name="tarefas">Tarefas</string>
+</resources>
