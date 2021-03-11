@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,22 +7,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lilas"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
 
-
-    <com.google.android.material.tabs.TabLayout
+<com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:tabIndicatorColor="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/tabLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+    android:contentDescription="@string/tarefas"
+
+    >
+
+    <com.google.android.material.tabs.TabItem
+        android:id="@+id/tabItem1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_label_1"
         />
+
+    <com.google.android.material.tabs.TabItem
+        android:id="@+id/tabItem2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_label_2"
+        />
+
+    <com.google.android.material.tabs.TabItem
+        android:id="@+id/tabItem3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_label_3"
+        />
+
+    </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

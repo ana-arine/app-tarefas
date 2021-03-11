@@ -5,31 +5,46 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.viewpager.widget.PagerAdapter
+import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var myLocationListener: MyLocationListener
+   // private lateinit var myLocationListener: MyLocationListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       // title = "MinhasTarefasApp"
-        tabLayout = findViewById(R.id.tabLayout)
-        viewPager = findViewById(R.id.viewPager)
+        supportActionBar?.hide()
+
+        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
+        val viewPager = findViewById<ViewPager>(R.id.viewPager)
+
         tabLayout.addTab(tabLayout.newTab().setText("Afazeres"))
         tabLayout.addTab(tabLayout.newTab().setText("Progresso"))
         tabLayout.addTab(tabLayout.newTab().setText("Feitas"))
         tabLayout.tabGravity = TabLayout.GRAVITY_FILL
+
         val adapter = FragmentAdapter(this, supportFragmentManager,
             tabLayout.tabCount)
+
         viewPager.adapter = adapter
-        viewPager.addOnPageChangeListener(TabLayoutOnPageChangeListener(tabLayout))
+        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
+
+        tabLayout.setupWithViewPager(viewPager)  //material.io
+
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 viewPager.currentItem = tab.position
+                // Handle tab unselect
             }
-            override fun onTabUnselected(tab: TabLayout.Tab) {}
-            override fun onTabReselected(tab: TabLayout.Tab) {}
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+                // Handle tab unselect
+            }
+            override fun onTabReselected(tab: TabLayout.Tab) {
+                // Handle tab unselect
+            }
         })
     }
 }
@@ -50,5 +65,5 @@ class MainActivity : AppCompatActivity() {
 //        tabLayout.setupWithViewPager(viewPager)
 //
 //    }
-//}
+}
 
