@@ -12,7 +12,7 @@
     >
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtTituloNovaTarefa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nova_tarefa"
@@ -29,7 +29,7 @@
         android:text="@string/texto_tarefa"
         android:textColor="@color/pretinho"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloNovaTarefa"
         app:layout_constraintStart_toStartOf="parent"
         />
 

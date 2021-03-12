@@ -15,4 +15,9 @@ class EmProgressoFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_progresso, container, false)
     }
+
+
+//    val adapter = <ClasseAdapter>(lista)
+//    <id_recyclerView>.adapter = adapter
+
 }

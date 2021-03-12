@@ -5,18 +5,46 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.ctt.minhastarefas.adapter.TarefasAdapter
+import com.ctt.minhastarefas.model.Tarefa
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
    // private lateinit var myLocationListener: MyLocationListener
-
+//    private val rvList: RecyclerView by lazy {
+//        findViewById<RecyclerView>(R.id.rv_list)
+//   }
+//    private val adapter = TarefasAdapter()
+//
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportActionBar?.hide()
+//
+//        bindViews()
+//    }
+//    private fun bindViews() {
+//        rvList.adapter = adapter // o adapter desse componente da RV é o adapter de Tarefas
+//        rvList.layoutManager = LinearLayoutManager(this) // a forma que o RV vai se comportar
+//
+//    }
+//
+//    private fun updateList() {
+//        adapter.updateList(
+//            arrayListOf(
+//                Tarefa(titulo = "Bola de Ferro", descricao = "Ir na bola de ferro 2a, 4a e 6a")
+//
+//        )
+//        )
+//    }
+
+
+
+      //  supportActionBar?.hide()
 
         val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
         val viewPager = findViewById<ViewPager>(R.id.viewPager)
@@ -49,6 +77,8 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+    //--------------------------------------------------------------------------------
+
 //SANDYARA -    whatsapp
 //class MainActivity : AppCompatActivity() {
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,5 +95,5 @@ class MainActivity : AppCompatActivity() {
 //        tabLayout.setupWithViewPager(viewPager)
 //
 //    }
-}
+//}
 

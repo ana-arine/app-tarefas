@@ -1,13 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.FazerFragment"
-    android:orientation="vertical">
+    tools:context=".MainActivity"
+    >
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
 
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/listaContatos"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_width="match_parent"-->
+<!--        tools:listitem="@layout/item_contato"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        />-->
+
+
+    <!--   -->
+    <!--        &lt;!&ndash;Top&ndash;&gt;-->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/radius_top_screen_radius"-->
+    <!--            android:layout_marginBottom="30dp"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            &lt;!&ndash;Search&ndash;&gt;-->
+    <!--            <LinearLayout-->
+    <!--                android:id="@+id/lyt_search_do"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                android:background="@drawable/radius_search"-->
+    <!--                android:layout_marginStart="17dp"-->
+    <!--                android:layout_marginEnd="16dp"-->
+    <!--                android:layout_marginBottom="16.5dp">-->
+    <!--                &lt;!&ndash;Image&ndash;&gt;-->
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:gravity="center">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:layout_width="18dp"-->
+    <!--                        android:layout_height="18dp"-->
+    <!--                        android:src="@drawable/ic_baseline_search_24"-->
+    <!--                        android:layout_marginHorizontal="12dp"/>-->
+
+    <!--                </LinearLayout>-->
+
+
+    <!--                <EditText-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="40dp"-->
+    <!--                    android:textSize="14sp"-->
+    <!--                    android:focusable="false"-->
+    <!--                    android:hint="Pesquise por tarefas a serem feitas"/>-->
+
+    <!--            </LinearLayout>-->
+
+    <!--        </LinearLayout>-->
+    <!--        &lt;!&ndash;Container&ndash;&gt;-->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:gravity="center"-->
+    <!--            >-->
+    <!--            &lt;!&ndash;            <LinearLayout&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    android:orientation="vertical"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    android:paddingBottom="80dp"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    android:gravity="center"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    app:layout_constraintTop_toTopOf="parent">&ndash;&gt;-->
+
+    <!--            &lt;!&ndash;                <ImageView&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        android:src="@drawable/ic_vazio"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                />&ndash;&gt;-->
+
+    <!--            &lt;!&ndash;                <TextView android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                          android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                          android:layout_marginTop="31.8dp"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                          android:gravity="center"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                          android:textSize="18sp"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                          android:text="@string/texto_lista_vazia"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                />&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <TextView android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                          android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                          android:gravity="center"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                          android:textSize="14sp"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                          android:text="@string/texto_lista_vazia_do"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                />&ndash;&gt;-->
+    <!--            &lt;!&ndash;            </LinearLayout>&ndash;&gt;-->
+
+
