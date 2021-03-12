@@ -8,16 +8,14 @@
     tools:context=".fragments.FeitasFragment"
     >
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listaFazer"
+        android:id="@+id/listaFeitas"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-
         />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
