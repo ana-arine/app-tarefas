@@ -9,7 +9,7 @@ import com.ctt.minhastarefas.fragments.FeitasFragment
 
 @Suppress("DEPRECATION")
 
-class FragmentAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getCount(): Int {
         return 3

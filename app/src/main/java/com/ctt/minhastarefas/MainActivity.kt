@@ -1,18 +1,9 @@
 package com.ctt.minhastarefas
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.ctt.minhastarefas.adapter.TarefasAdapter
-import com.ctt.minhastarefas.model.Tarefa
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         tabLayout.addTab(tabLayout.newTab().setText("Feitas"))
         tabLayout.tabGravity = TabLayout.GRAVITY_FILL
 
-        val adapter = FragmentAdapter(this, supportFragmentManager,
+        val adapter = ViewPagerAdapter(this, supportFragmentManager,
             tabLayout.tabCount)
 
         viewPager.adapter = adapter
