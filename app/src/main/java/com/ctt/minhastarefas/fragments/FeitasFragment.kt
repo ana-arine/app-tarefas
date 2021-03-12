@@ -37,7 +37,7 @@ class FeitasFragment : Fragment() {
                 Tarefa("Fiz tudo", "Pra ficar mais forte"),
                 Tarefa("Fui na praia", "Pra tomar picolé")
         )
-        val rvFeitas = view.findViewById<RecyclerView>(R.id.listaFazer)
+        val rvFeitas = view.findViewById<RecyclerView>(R.id.listaFeitas)
         val adapterFeitas = TarefasAdapter(listaFeitas)
         rvFeitas.adapter = adapterFeitas
         rvFeitas.layoutManager = LinearLayoutManager(requireContext())

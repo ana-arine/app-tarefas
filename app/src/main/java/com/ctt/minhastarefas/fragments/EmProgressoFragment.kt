@@ -45,7 +45,7 @@ class EmProgressoFragment : Fragment() {
                 Tarefa("Fazendo umas coisas aí", "Pra ficar mais forte"),
                 Tarefa("No momento indo na farmácia", "Comprar xantinon")
         )
-        val rvEmProgresso = view.findViewById<RecyclerView>(R.id.listaFazer)
+        val rvEmProgresso = view.findViewById<RecyclerView>(R.id.listaProgresso)
         val adapterEmProgresso = TarefasAdapter(listaEmProgresso)
         rvEmProgresso.adapter = adapterEmProgresso
         rvEmProgresso.layoutManager = LinearLayoutManager(requireContext())
