@@ -7,10 +7,10 @@
     <string name="text_label_3">Feitas</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="texto_lista_vazia">Opa... Não há nada aqui!</string>
-    <string name="texto_lista_vazia_do">Mas aposto que você possui muita coisa para fazer.\n\nComece sua lista!
-    </string>
-    <string name="texto_lista_vazia_progress">Que tal iniciar alguma tarefa da sua lista?</string>
-    <string name="texto_lista_vazia_done">Acredito no seu potencial de terminar uma tarefa hoje. ;)</string>
+    <string name="texto_lista_vazia_fazer">Mas aposto que você possui muita coisa para fazer.</string>
+    <string name="texto_comece">Comece sua lista!</string>
+    <string name="texto_lista_vazia_progresso">Que tal iniciar alguma tarefa da sua lista?</string>
+    <string name="texto_lista_vazia_feitas">Acredito no seu potencial de terminar uma tarefa hoje. ;)</string>
     <string name="nova_tarefa">Nova tarefa</string>
     <string name="texto_tarefa">Adicione uma tarefa que ainda será feita</string>
     <string name="feita">Feita</string>
@@ -18,4 +18,5 @@
     <string name="descricao">Descrição da tarefa</string>
     <string name="opcional">Opcional</string>
     <string name="criar_tarefa">Criar tarefa</string>
+    <string name="adicionar">+ Adicionar</string>
 </resources>
