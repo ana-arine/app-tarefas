@@ -1,5 +1,6 @@
 package com.ctt.minhastarefas
 
+import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -9,14 +10,17 @@ import com.ctt.minhastarefas.fragments.FeitasFragment
 
 @Suppress("DEPRECATION")
 
-class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class ViewPagerAdapter(
+        var context: Context,
+        fm: FragmentManager,
+        var totalTabs: Int) : FragmentPagerAdapter(fm) {
 
     override fun getCount(): Int {
         return 3
     }
 
     override fun getItem(position: Int): Fragment {
-        return when(position){
+        return when (position) {
 
             0 -> FazerFragment()
             1 -> EmProgressoFragment()
@@ -24,13 +28,6 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
             else -> getItem(position)
         }
     }
-
-//    override fun getPageTitle(position: Int): CharSequence? {
-//        return when(position){
-//            0 -> "Fazer"
-//            1 -> "Progresso"
-//            2 -> "Feitas"
-//            else -> getPageTitle(position)
-//        }
-//    }
 }
+
+
