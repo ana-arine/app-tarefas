@@ -31,9 +31,9 @@ class FazerFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_fazer, container, false)
 
         // Define a sheet
-        val btnsheet = layoutInflater.inflate(R.layout.sheet_fazer, null)
+        val bottomSheet = layoutInflater.inflate(R.layout.sheet_fazer, null)
         val dialog = BottomSheetDialog(this.requireContext())
-        dialog.setContentView(btnsheet)
+        dialog.setContentView(bottomSheet)
 
         // Botão flutuante de adicionar tarefas
         val btnAdicionar: View = view.findViewById(R.id.btnAdicionar)

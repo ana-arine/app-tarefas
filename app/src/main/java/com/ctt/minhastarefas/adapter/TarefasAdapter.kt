@@ -28,7 +28,6 @@ class TarefasAdapter(private val listaTarefas: MutableList<Tarefa>) :
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_tarefa, parent, false)
         return AdapterViewHolder(view)
 
-
     }
 
     //popular o item na lista do RV. Executado a cada passagem de item

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MinhasTarefas</string>
+    <string name="app_name">Tarefas</string>
     <string name="minhas">Minhas</string>
     <string name="tarefas">Tarefas</string>
     <string name="text_label_1">A fazer</string>
