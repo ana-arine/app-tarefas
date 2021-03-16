@@ -9,21 +9,21 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ctt.minhastarefas.MainActivity.Companion.adapterEmProgresso
 import com.ctt.minhastarefas.R
 import com.ctt.minhastarefas.adapter.TarefasAdapter
 import com.ctt.minhastarefas.model.Tarefa
 
 class EmProgressoFragment : Fragment() {
     private val CICLO_VIDA = "CICLO_VIDA"
-    private lateinit var botaoCadastrar: Button
-    private lateinit var tituloTarefa: EditText
-    private lateinit var descricaoTarefa: EditText
+//    private lateinit var botaoCadastrar: Button
+//    private lateinit var tituloTarefa: EditText
+//    private lateinit var descricaoTarefa: EditText
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-
 
         return inflater.inflate(R.layout.fragment_progresso, container, false)
 
@@ -41,12 +41,7 @@ class EmProgressoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val listaEmProgresso: MutableList<Tarefa> = mutableListOf(
-                Tarefa("Fazendo umas coisas aí", "Pra ficar mais forte"),
-                Tarefa("No momento indo na farmácia", "Comprar xantinon")
-        )
         val rvEmProgresso = view.findViewById<RecyclerView>(R.id.listaProgresso)
-        val adapterEmProgresso = TarefasAdapter(listaEmProgresso)
         rvEmProgresso.adapter = adapterEmProgresso
         rvEmProgresso.layoutManager = LinearLayoutManager(requireContext())
     }
