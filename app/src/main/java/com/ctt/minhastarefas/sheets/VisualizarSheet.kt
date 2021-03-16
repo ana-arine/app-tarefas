@@ -43,5 +43,13 @@ class VisualizarSheet(tarefa: Tarefa) : BottomSheetDialogFragment() {
             dismissAllowingStateLoss()
             Toast.makeText(it.context, "Tarefa excluída", Toast.LENGTH_LONG).show()
         }
+
+
+        btnIniciarTarefa.setOnClickListener {
+            MainActivity.copiarParaProgresso(tarefa)
+            MainActivity.removerTarefa(tarefa)
+            dismissAllowingStateLoss()
+            Toast.makeText(it.context, "Tarefa iniciada. Boa sorte!", Toast.LENGTH_LONG).show()
+        }
     }
 }

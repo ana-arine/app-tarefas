@@ -64,12 +64,12 @@ class MainActivity : AppCompatActivity() {
 
         fun copiarParaProgresso(tarefa: Tarefa) {
             listaEmProgresso.add(tarefa)
-            adapterFazer.updateList()
+            adapterEmProgresso.updateList()
         }
 
         fun copiarParaFeitas(tarefa: Tarefa) {
             listaFeitas.add(tarefa)
-            adapterEmProgresso.updateList()
+            adapterFeitas.updateList()
         }
     }
 }
