@@ -11,8 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ctt.minhastarefas.MainActivity.Companion.adapterEmProgresso
 import com.ctt.minhastarefas.R
-import com.ctt.minhastarefas.adapter.TarefasAdapter
-import com.ctt.minhastarefas.model.Tarefa
+
 
 class EmProgressoFragment : Fragment() {
     private val CICLO_VIDA = "CICLO_VIDA"

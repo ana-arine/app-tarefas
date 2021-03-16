@@ -7,22 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ctt.minhastarefas.MainActivity
+import com.ctt.minhastarefas.MainActivity.Companion.adapterFazer
 import com.ctt.minhastarefas.R
 import com.ctt.minhastarefas.adapter.TarefasAdapter
 import com.ctt.minhastarefas.model.Tarefa
+import com.ctt.minhastarefas.sheets.FazerSheet
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class FazerFragment : Fragment() {
 
     private val CICLO_VIDA = "CICLO_VIDA"
-    private lateinit var botaoCadastrar: Button
-    private lateinit var tituloTarefa: EditText
-    private lateinit var descricaoTarefa: EditText
-    private lateinit var adapter: TarefasAdapter
+//    private lateinit var botaoCadastrar: Button
+//    private lateinit var tituloTarefa: EditText
+//    private lateinit var descricaoTarefa: EditText
+//    private lateinit var adapter: TarefasAdapter
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -34,63 +37,45 @@ class FazerFragment : Fragment() {
 
 
 // Define a sheet
-        val bottomSheet = layoutInflater.inflate(R.layout.sheet_fazer, null)
-        val dialog = BottomSheetDialog(this.requireContext())
-        dialog.setContentView(bottomSheet)
+//        val bottomSheet = layoutInflater.inflate(R.layout.sheet_fazer, null)
+//        val dialog = BottomSheetDialog(this.requireContext())
+//        dialog.setContentView(bottomSheet)
 
         // Botão flutuante de adicionar tarefas
         val btnAdicionar: View = view.findViewById(R.id.btnAdicionar)
-        btnAdicionar.setOnClickListener {
-            Log.e(CICLO_VIDA, "Botao de adicionar apertado")
-            dialog.show()
-        }
-
-        // Monitorando click do botão de adicionar tarefa pelo sheet
-        val btnCriarTarefa: View = bottomSheet.findViewById(R.id.btnCriarTarefa)
-        btnCriarTarefa.setOnClickListener {
-            val editFazerTitulo = bottomSheet.findViewById<EditText>(R.id.editFazerTitulo).text.toString()
-            val editFazerDescricao = bottomSheet.findViewById<EditText>(R.id.editFazerDescricao).text.toString()
-            Log.e(CICLO_VIDA, "BOTÃO VERMELHO DE ADICIONAR TAREFA CLICADO! Titulo = ${editFazerTitulo}")
-            listaTarefas.add(Tarefa(editFazerTitulo, editFazerDescricao))
-            // Avisar a adapter do RecyclerView de que ela precisa ser atualizada com notifyDataSetChanged();
-            adapter.notifyDataSetChanged()
-            dialog.dismiss()
-        }
-
+        initClick(btnAdicionar)
         return view
+        }
 
-//        Log.e(CICLO_VIDA, "App em OnCreate")
-//        if (listaTarefas.isNullOrEmpty()) {
-//            Log.e(CICLO_VIDA, "Não tem tarefas pra fazer")
-//            return inflater.inflate(R.layout.fragment_fazer_empty, container, false)
-//        } else {
-//            Log.e(CICLO_VIDA, "Tem tarefas pra fazer")
-//            return inflater.inflate(R.layout.fragment_fazer, container, false)
-//        }
+    private fun initClick(btnAdicionar: View) {
+
+        val manager = (this.context as AppCompatActivity).supportFragmentManager
+        btnAdicionar.setOnClickListener {
+            FazerSheet().show(manager, FazerSheet.TAG)
+            Log.e(CICLO_VIDA, "Botao de adicionar apertado")
+        }
     }
 
-
-
-    //APós a fragment ser criada
+        //Após a fragment ser criada
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val rvFazer = view.findViewById<RecyclerView>(R.id.listaFazer)
-        val adapterFazer = TarefasAdapter(listaTarefas)
-        adapter = adapterFazer
+
         rvFazer.adapter = adapterFazer
         rvFazer.layoutManager = LinearLayoutManager(requireContext())
 
 
     }
-    companion object {
-        val listaTarefas: MutableList<Tarefa> = mutableListOf(
-                Tarefa("Fazer bola de ferro", "Pra ficar mais forte"),
-                Tarefa("Ir no mercado", "Comprar leite")
-        )
+
+//    companion object {
+//        val listaTarefas: MutableList<Tarefa> = mutableListOf(
+//                Tarefa("Fazer bola de ferro", "Pra ficar mais forte"),
+//                Tarefa("Ir no mercado", "Comprar leite")
+//        )
+//    }
 
 
-    }
 }
 
 
