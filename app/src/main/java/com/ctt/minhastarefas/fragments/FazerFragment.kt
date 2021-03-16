@@ -22,10 +22,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 class FazerFragment : Fragment() {
 
     private val CICLO_VIDA = "CICLO_VIDA"
-//    private lateinit var botaoCadastrar: Button
-//    private lateinit var tituloTarefa: EditText
-//    private lateinit var descricaoTarefa: EditText
-//    private lateinit var adapter: TarefasAdapter
+
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -35,11 +32,6 @@ class FazerFragment : Fragment() {
         // O que onCreateView vai retornar
         val view: View = inflater.inflate(R.layout.fragment_fazer, container, false)
 
-
-// Define a sheet
-//        val bottomSheet = layoutInflater.inflate(R.layout.sheet_fazer, null)
-//        val dialog = BottomSheetDialog(this.requireContext())
-//        dialog.setContentView(bottomSheet)
 
         // Botão flutuante de adicionar tarefas
         val btnAdicionar: View = view.findViewById(R.id.btnAdicionar)
@@ -51,7 +43,7 @@ class FazerFragment : Fragment() {
 
         val manager = (this.context as AppCompatActivity).supportFragmentManager
         btnAdicionar.setOnClickListener {
-            FazerSheet().show(manager, FazerSheet.TAG)
+            FazerSheet().show(manager, "FazerSheet")
             Log.e(CICLO_VIDA, "Botao de adicionar apertado")
         }
     }

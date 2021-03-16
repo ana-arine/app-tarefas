@@ -44,11 +44,11 @@ class TarefasAdapter(private val listaTarefas: MutableList<Tarefa>) :
     }
 
     //método público para a Main acessar o adapter
-    fun updateList() {
-//        this.listaTarefas.clear()
-//        this.listaTarefas.addAll(list)
-        notifyDataSetChanged()
-    }
+//    fun updateList() {
+////        this.listaTarefas.clear()
+////        this.listaTarefas.addAll(list)
+//        notifyDataSetChanged()
+//    }
 
     override fun getItemCount(): Int = listaTarefas.size
 

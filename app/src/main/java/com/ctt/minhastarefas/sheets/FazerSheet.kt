@@ -9,17 +9,12 @@ import android.widget.EditText
 import android.widget.Toast
 import com.ctt.minhastarefas.MainActivity.Companion.adicionarTarefa
 import com.ctt.minhastarefas.R
-import com.ctt.minhastarefas.adapter.TarefasAdapter
-import com.ctt.minhastarefas.model.Tarefa
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.sheet_fazer.*
 
 
 class FazerSheet : BottomSheetDialogFragment() {
 
-    companion object {
-        const val TAG = "FazerSheet"
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

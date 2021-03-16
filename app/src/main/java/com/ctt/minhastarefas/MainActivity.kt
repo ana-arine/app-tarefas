@@ -52,24 +52,24 @@ class MainActivity : AppCompatActivity() {
 
         fun adicionarTarefa(titulo: String, descricao: String) {
             listaTarefas.add(Tarefa(titulo, descricao))
-            adapterFazer.updateList()
+            adapterFazer.notifyDataSetChanged()
         }
 
         fun removerTarefa(tarefa: Tarefa) {
             if (tarefa in listaTarefas) {
                 listaTarefas.remove(tarefa)
-                adapterFazer.updateList()
+                adapterFazer.notifyDataSetChanged()
             }
         }
 
         fun copiarParaProgresso(tarefa: Tarefa) {
             listaEmProgresso.add(tarefa)
-            adapterEmProgresso.updateList()
+            adapterEmProgresso.notifyDataSetChanged()
         }
 
         fun copiarParaFeitas(tarefa: Tarefa) {
             listaFeitas.add(tarefa)
-            adapterFeitas.updateList()
+            adapterFeitas.notifyDataSetChanged()
         }
     }
 }
