@@ -10,6 +10,7 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ctt.minhastarefas.MainActivity
 import com.ctt.minhastarefas.R
 import com.ctt.minhastarefas.adapter.TarefasAdapter
 import com.ctt.minhastarefas.model.Tarefa
@@ -21,6 +22,7 @@ class FazerFragment : Fragment() {
     private lateinit var botaoCadastrar: Button
     private lateinit var tituloTarefa: EditText
     private lateinit var descricaoTarefa: EditText
+    private lateinit var adapter: TarefasAdapter
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +32,8 @@ class FazerFragment : Fragment() {
         // O que onCreateView vai retornar
         val view: View = inflater.inflate(R.layout.fragment_fazer, container, false)
 
-        // Define a sheet
+
+// Define a sheet
         val bottomSheet = layoutInflater.inflate(R.layout.sheet_fazer, null)
         val dialog = BottomSheetDialog(this.requireContext())
         dialog.setContentView(bottomSheet)
@@ -40,6 +43,18 @@ class FazerFragment : Fragment() {
         btnAdicionar.setOnClickListener {
             Log.e(CICLO_VIDA, "Botao de adicionar apertado")
             dialog.show()
+        }
+
+        // Monitorando click do botão de adicionar tarefa pelo sheet
+        val btnCriarTarefa: View = bottomSheet.findViewById(R.id.btnCriarTarefa)
+        btnCriarTarefa.setOnClickListener {
+            val editFazerTitulo = bottomSheet.findViewById<EditText>(R.id.editFazerTitulo).text.toString()
+            val editFazerDescricao = bottomSheet.findViewById<EditText>(R.id.editFazerDescricao).text.toString()
+            Log.e(CICLO_VIDA, "BOTÃO VERMELHO DE ADICIONAR TAREFA CLICADO! Titulo = ${editFazerTitulo}")
+            listaTarefas.add(Tarefa(editFazerTitulo, editFazerDescricao))
+            // Avisar a adapter do RecyclerView de que ela precisa ser atualizada com notifyDataSetChanged();
+            adapter.notifyDataSetChanged()
+            dialog.dismiss()
         }
 
         return view
@@ -54,26 +69,32 @@ class FazerFragment : Fragment() {
 //        }
     }
 
+
+
     //APós a fragment ser criada
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val rvFazer = view.findViewById<RecyclerView>(R.id.listaFazer)
+        val adapterFazer = TarefasAdapter(listaTarefas)
+        adapter = adapterFazer
+        rvFazer.adapter = adapterFazer
+        rvFazer.layoutManager = LinearLayoutManager(requireContext())
 
+
+    }
+    companion object {
         val listaTarefas: MutableList<Tarefa> = mutableListOf(
                 Tarefa("Fazer bola de ferro", "Pra ficar mais forte"),
                 Tarefa("Ir no mercado", "Comprar leite")
         )
-        val rvFazer = view.findViewById<RecyclerView>(R.id.listaFazer)
-        val adapterFazer = TarefasAdapter(listaTarefas)
-        rvFazer.adapter = adapterFazer
-        rvFazer.layoutManager = LinearLayoutManager(requireContext())
+
+
     }
 }
 
 
-
-
-    //aula DIO
+//aula DIO
 
 // private lateinit var myLocationListener: MyLocationListener
 //    private val rvList: RecyclerView by lazy {

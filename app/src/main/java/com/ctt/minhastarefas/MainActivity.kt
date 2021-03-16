@@ -2,6 +2,7 @@ package com.ctt.minhastarefas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 
@@ -14,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         //supportActionBar?.hide()
 
         val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
-        val viewPager = findViewById<ViewPager>(R.id.viewPager)
+      //  val viewPager = findViewById<ViewPager>(R.id.viewPager)
 
         val adapter = ViewPagerAdapter(this, supportFragmentManager,
                 tabLayout.tabCount)
@@ -27,7 +28,14 @@ class MainActivity : AppCompatActivity() {
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+
     }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.id.action_search, menu)
+
+        return true
+    }
+
 }
 
 

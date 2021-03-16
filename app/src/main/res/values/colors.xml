@@ -15,5 +15,7 @@
     <color name="pretinho">#202020</color>
     <color name="cinza_texto">#616161</color>
     <color name="cinza_fundo">#ECECEC</color>
+    <color name="lilas_tab_bg">#E7D4FF</color>
+
 
 </resources>

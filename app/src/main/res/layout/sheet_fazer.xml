@@ -12,8 +12,6 @@
     android:paddingTop="56dp"
     >
 
-
-
     <TextView
         android:id="@+id/txtTituloNovaTarefa"
         android:layout_width="wrap_content"
@@ -37,7 +35,7 @@
         />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editFazerTitulo"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="28dp"
@@ -52,8 +50,7 @@
         />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
+        android:id="@+id/editFazerDescricao"
         android:layout_height="156dp"
         android:background="@color/cinza_fundo"
         android:gravity="top"
@@ -62,22 +59,21 @@
         android:padding="16dp"
         android:textColorHint="@color/cinza_texto"
         android:textSize="16sp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/editFazerTitulo"
+        android:layout_width="match_parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/opcional"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/editFazerDescricao"
         app:layout_constraintStart_toStartOf="parent"
         />
 
     <Button
-        android:id="@+id/btnCriar"
+        android:id="@+id/btnCriarTarefa"
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:backgroundTint="@color/botao"
@@ -88,7 +84,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        
-        />
 
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
