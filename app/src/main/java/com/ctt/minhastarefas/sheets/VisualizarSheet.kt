@@ -29,8 +29,8 @@ class VisualizarSheet(tarefa: Tarefa) : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val txtTituloVisualizar = view!!.findViewById<TextView>(R.id.txtTituloVisualizar)
-        val txtConteudoVisualizar = view!!.findViewById<TextView>(R.id.txtConteudoVisualizar)
+        val txtTituloVisualizar = view.findViewById<TextView>(R.id.txtTituloVisualizar)
+        val txtConteudoVisualizar = view.findViewById<TextView>(R.id.txtConteudoVisualizar)
         txtTituloVisualizar.setText(tarefa.titulo)
         txtConteudoVisualizar.setText(tarefa.descricao)
         initClick()

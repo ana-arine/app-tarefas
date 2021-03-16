@@ -2,16 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_marginTop="62dp"
-    android:layout_marginBottom="52dp"
     android:layout_marginHorizontal="22dp"
-    android:paddingTop="56dp"
-    android:background="@drawable/bordas_sheets"
-    >
+    android:layout_marginBottom="22dp"
+    android:layout_marginTop="46dp"
+    android:orientation="vertical"
+    android:paddingTop="15dp">
+
 
     <TextView
         android:id="@+id/txtTituloVisualizar"
@@ -68,7 +66,6 @@
         android:textSize="16sp"
         android:layout_marginTop="34dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTituloVisualizar" />
 
@@ -76,31 +73,50 @@
         android:id="@+id/btnExcluirTarefa"
         android:layout_width="wrap_content"
         android:layout_height="62dp"
-        android:drawableLeft="@drawable/ic_excluir"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/ic_excluir"
         android:text="@string/excluir_tarefa"
         android:textAllCaps="false"
         android:textColor="@color/botao"
         android:textSize="20sp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnIniciarTarefa"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtConteudoVisualizar" />
 
+
+<!--    <Button-->
+<!--        android:id="@+id/btnIniciarTarefa"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="62dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:background="@drawable/bordas_botoes"-->
+
+<!--        android:text="@string/iniciar_tarefa"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btnExcluirTarefa" />-->
 
     <Button
         android:id="@+id/btnIniciarTarefa"
         android:layout_width="match_parent"
         android:layout_height="62dp"
-        android:background="@drawable/bordas_botoes"
-
-        android:text="@string/iniciar_tarefa"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="14dp"
+        android:backgroundTint="@color/botao"
+        android:text="Iniciar Tarefa"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/btnExcluirTarefa" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
