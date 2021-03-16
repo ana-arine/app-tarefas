@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import androidx.viewpager.widget.ViewPager
+import com.ctt.minhastarefas.adapter.TarefasAdapter
+import com.ctt.minhastarefas.model.Tarefa
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         //supportActionBar?.hide()
 
         val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
-      //  val viewPager = findViewById<ViewPager>(R.id.viewPager)
+        val viewPager = findViewById<ViewPager>(R.id.viewPager)
 
         val adapter = ViewPagerAdapter(this, supportFragmentManager,
                 tabLayout.tabCount)
@@ -30,12 +32,46 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.id.action_search, menu)
+    companion object {
+        val listaTarefas: MutableList<Tarefa> = mutableListOf(
+            Tarefa("Fazer bola de ferro", "Pra ficar mais forte"),
+            Tarefa("Ir no mercado", "Comprar leite")
+        )
 
-        return true
+        val listaEmProgresso: MutableList<Tarefa> = mutableListOf(
+            Tarefa("Fazendo umas coisas aí", "Pra ficar mais forte"),
+            Tarefa("No momento indo na farmácia", "Comprar xantinon")
+        )
+        val listaFeitas: MutableList<Tarefa> = mutableListOf(
+            Tarefa("Fiz tudo", "Pra ficar mais forte"),
+            Tarefa("Fui na praia", "Pra tomar picolé")
+        )
+        val adapterFazer = TarefasAdapter(listaTarefas)
+        val adapterEmProgresso = TarefasAdapter(listaEmProgresso)
+        val adapterFeitas = TarefasAdapter(listaFeitas)
+
+        fun adicionarTarefa(titulo: String, descricao: String) {
+            listaTarefas.add(Tarefa(titulo, descricao))
+            adapterFazer.updateList()
+        }
+
+        fun removerTarefa(tarefa: Tarefa) {
+            if (tarefa in listaTarefas) {
+                listaTarefas.remove(tarefa)
+                adapterFazer.updateList()
+            }
+        }
+
+        fun copiarParaProgresso(tarefa: Tarefa) {
+            listaEmProgresso.add(tarefa)
+            adapterFazer.updateList()
+        }
+
+        fun copiarParaFeitas(tarefa: Tarefa) {
+            listaFeitas.add(tarefa)
+            adapterEmProgresso.updateList()
+        }
     }
-
 }
 
 

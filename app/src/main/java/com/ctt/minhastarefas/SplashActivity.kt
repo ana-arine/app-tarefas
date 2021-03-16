@@ -20,22 +20,3 @@ class SplashActivity : AppCompatActivity() {
         }, SPLASH_TIME_OUT)
     }
 }
-
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-//        supportActionBar?.hide()
-//        nextActivity()
-//    }
-//
-//    fun nextActivity() {
-//        Handler(
-//            Looper.getMainLooper()).postDelayed({
-//            val telaTarefas =
-//                Intent(this, TelaFragments::class.java)
-//            startActivity(telaTarefas)
-//            finish()
-//        }, 4000)}
-//
-//}
