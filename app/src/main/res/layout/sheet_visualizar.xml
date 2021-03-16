@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="62dp"
+    android:layout_marginBottom="52dp"
+    android:layout_marginHorizontal="22dp"
+    android:paddingTop="56dp"
+    android:background="@drawable/bordas_sheets"
+    >
+
+    <TextView
+        android:id="@+id/txtTituloVisualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/fazer_compras"
+        android:textColor="@color/pretinho"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="50dp"
+        android:rotation="90"
+        android:src="@drawable/horizontal_dashed_line"
+        app:layout_constraintEnd_toStartOf="@+id/btnEditar"
+        app:layout_constraintStart_toEndOf="@+id/txtTituloVisualizar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_editar"
+        android:background="@color/white"
+        />
+
+
+    <TextView
+        android:id="@+id/txtFazer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/a_fazer"
+        android:textColor="@color/cinza_texto"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloVisualizar"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <TextView
+        android:id="@+id/txtConteudoVisualizar"
+        android:layout_width="match_parent"
+        android:layout_height="164dp"
+        android:background="@color/white"
+        android:gravity="top"
+        android:hint="@string/hint1"
+        android:padding="16dp"
+        android:textColorHint="@color/pretinho"
+        android:textSize="16sp"
+        android:layout_marginTop="34dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloVisualizar" />
+
+    <Button
+        android:id="@+id/btnExcluirTarefa"
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:drawableLeft="@drawable/ic_excluir"
+        android:backgroundTint="@color/white"
+        android:text="@string/excluir_tarefa"
+        android:textAllCaps="false"
+        android:textColor="@color/botao"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnIniciarTarefa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/btnIniciarTarefa"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="@drawable/bordas_botoes"
+
+        android:text="@string/iniciar_tarefa"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

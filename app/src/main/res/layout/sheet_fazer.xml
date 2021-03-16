@@ -12,13 +12,15 @@
     android:paddingTop="56dp"
     >
 
+
+
     <TextView
         android:id="@+id/txtTituloNovaTarefa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nova_tarefa"
         android:textColor="@color/pretinho"
-        android:textSize="28sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>

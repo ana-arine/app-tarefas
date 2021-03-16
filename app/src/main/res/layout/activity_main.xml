@@ -47,6 +47,13 @@
 
     </com.google.android.material.tabs.TabLayout>
 
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contextClickable="true"/>
 
     <com.google.android.material.tabs.TabItem
 

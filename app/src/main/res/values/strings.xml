@@ -18,6 +18,11 @@
     <string name="descricao">Descrição da tarefa</string>
     <string name="opcional">Opcional</string>
     <string name="criar_tarefa">Criar tarefa</string>
-    <string name="adicionar">+ Adicionar</string>
+    <string name="adicionar">Adicionar</string>
     <string name="pesquisar">Pesquisar</string>
+    <string name="a_fazer">A fazer</string>
+    <string name="hint1">As you can clearly see, we do not define the orientation of the line. Here comes the strange part when drawing vertical lines, we need to rotate the whole drawable with 90 degrees in order to obtain the desired outcome. Doesn’t sound very hard, does it? Below you can see the code, the referenced drawable was defined above.</string>
+    <string name="iniciar_tarefa">Iniciar tarefa</string>
+    <string name="excluir_tarefa">Excluir tarefa</string>
+    <string name="fazer_compras">Fazer compras</string>
 </resources>
