@@ -29,11 +29,11 @@ class FazerSheet : BottomSheetDialogFragment() {
 
     private fun initClick() {
 
-        val txtTitulo = view!!.findViewById<EditText>(R.id.editFazerTitulo)
-        val txtDescricao = view!!.findViewById<EditText>(R.id.editFazerDescricao)
+        val txtTitulo = view?.findViewById<EditText>(R.id.editFazerTitulo)
+        val txtDescricao = view?.findViewById<EditText>(R.id.editFazerDescricao)
 
         btnCriarTarefa.setOnClickListener {
-            adicionarTarefa(txtTitulo.text.toString(), txtDescricao.text.toString())
+            adicionarTarefa(txtTitulo?.text.toString(), txtDescricao?.text.toString())
             dismissAllowingStateLoss()
             Toast.makeText(it.context, "Tarefa adicionada ;)", Toast.LENGTH_LONG).show()
         }

@@ -1,100 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/feitas_container"
-    tools:context=".fragments.FeitasFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-
-   >
-
-<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginHorizontal="22dp"
-    android:layout_marginBottom="15dp"
+    android:layout_marginBottom="22dp"
+    android:layout_marginTop="46dp"
     android:orientation="vertical"
-    android:paddingTop="40dp">
+    android:paddingTop="15dp"
+    >
+
 
     <TextView
-        android:id="@+id/txtTituloNovaTarefa"
+        android:id="@+id/txtTituloVisualizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nova_tarefa"
+        android:hint="@string/fazer_compras"
         android:textColor="@color/pretinho"
-        android:textSize="28sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:rotation="90"
+        android:src="@drawable/horizontal_dashed_line"
+        app:layout_constraintEnd_toStartOf="@+id/btnEditar"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <ImageButton
+        android:id="@+id/btnEditar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@color/white"
+        android:src="@drawable/ic_editar"
+        app:layout_constraintBottom_toTopOf="@+id/txtConteudoVisualizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="10dp"
+        />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtFazer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/texto_tarefa"
-        android:textColor="@color/pretinho"
-        android:textSize="14sp"
+        android:text="@string/feita"
+        android:textColor="@color/cinza_texto"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloVisualizar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTituloNovaTarefa" />
+        />
 
-    <EditText
-        android:id="@+id/editFazerTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="28dp"
-        android:background="@color/cinza_fundo"
-        android:hint="@string/titulo_da_tarefa"
-        android:imeOptions="actionNext"
-        android:inputType="text"
-        android:padding="16dp"
-        android:textColorHint="@color/cinza_texto"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <EditText
-        android:id="@+id/editFazerDescricao"
+    <TextView
+        android:id="@+id/txtConteudoVisualizar"
         android:layout_width="match_parent"
-        android:layout_height="156dp"
-        android:layout_marginTop="28dp"
-        android:background="@color/cinza_fundo"
+        android:layout_height="164dp"
+        android:background="@color/white"
         android:gravity="top"
-        android:hint="@string/descricao"
-        android:imeOptions="actionDone"
-        android:inputType="text"
         android:padding="16dp"
-        android:textColorHint="@color/cinza_texto"
+        android:textColorHint="@color/pretinho"
         android:textSize="16sp"
+        android:layout_marginTop="34dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editFazerTitulo" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/opcional"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editFazerDescricao" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloVisualizar" />
 
     <Button
-        android:id="@+id/btnCriarTarefa"
-        android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:layout_marginTop="72dp"
-        android:backgroundTint="@color/botao"
-        android:text="@string/criar_tarefa"
+        android:id="@+id/btnExcluirTarefa"
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/ic_excluir"
+        android:text="@string/excluir_tarefa"
         android:textAllCaps="false"
-        android:textColor="@color/white"
+        android:textColor="@color/botao"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editFazerDescricao" />
+        app:layout_constraintTop_toBottomOf="@+id/txtConteudoVisualizar" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
